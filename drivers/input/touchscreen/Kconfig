@@ -1136,7 +1136,33 @@ config TOUCHSCREEN_GT9XX
 	  report 5 touches at a time.
 
           If unsure, say N.
+          
+config TOUCHSCREEN_GT9XX
+       tristate "Goodix touchscreens"
+       depends on I2C
+       help
+         Say Y here if you have a GT9xx touchscreen.
+         GT9xx controllers are multi touch controllers which can
+         report 10 touches at a time.
 
+         If unsure, say N.
+
+         To compile this driver as a module, choose M here: the
+         module will be called GT9xx.
+
+
+source "drivers/input/touchscreen/gt9xx/Kconfig"
+
+config VITURALSAR
+	bool "Vitural Sar series"
+	depends on I2C
+	help
+	  Say Y here if you have a Goodix GT9xx touchscreen.
+	  Gt9xx controllers are multi touch controllers which can
+	  report 5 touches at a time.
+
+          If unsure, say N.
+          
 config TOUCHSCREEN_MAXIM_STI
 	tristate "Maxim based STI touchscreens"
 	depends on SPI_MASTER
@@ -1149,7 +1175,6 @@ config TOUCHSCREEN_MAXIM_STI
 	  To compile this driver as a module, choose M here: the
 	  module will be called maxim_sti.
 
-source "drivers/input/touchscreen/gt9xx/Kconfig"
 source "drivers/input/touchscreen/focaltech_touch/Kconfig"
 
 config TOUCHSCREEN_HIMAX_CHIPSET
