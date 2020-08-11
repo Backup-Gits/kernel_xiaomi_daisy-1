@@ -307,6 +307,8 @@
 &pmi8950_charger {
 	qcom,battery-data = <&qrd_batterydata>;
 	qcom,float-voltage-mv = <4400>;
+	qcom,chg-led-sw-controls;
+	qcom,chg-led-support;
 	qcom,thermal-mitigation = <3000 2500 2000 2000 1000 1000 0>;
 	status = "okay";
 };
